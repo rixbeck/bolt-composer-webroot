@@ -1,22 +1,22 @@
 {
-	"name" : "rossriley/boltcomposer-webroot",
+	"name" : "rixbeck/boltcomposer-webroot",
 	"require" : {
 		"bolt/bolt" : "dev-master"
 	},
-    "require-dev" : {
-        "rixbeck/bolt-tasks" : "dev-master"
-    },
-    "repositories" : [{
-            "type" : "vcs",
-            "url" : "https://github.com/rixbeck/bolt-tasks.git"
-        }
-    ],
+	"require-dev" : {
+		"rixbeck/bolt-tasks" : "dev-master"
+	},
+	"repositories" : [{
+			"type" : "vcs",
+			"url" : "https://github.com/rixbeck/bolt-tasks.git"
+		}
+	],
 	"authors" : [{
 			"name" : "Ross Riley",
 			"email" : "riley.ross@gmail.com"
 		}, {
-		    "name" : "Rix Beck",
-		    "email" : "rix@neologik.hu"
+			"name" : "Rix Beck",
+			"email" : "rix@neologik.hu"
 		}
 	],
 	"minimum-stability" : "dev",
