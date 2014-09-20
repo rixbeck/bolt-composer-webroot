@@ -1,38 +1,41 @@
 {
-    "name": "rossriley/boltcomposer-webroot",
-    "require": {
-        "bolt/bolt": "dev-master"
+	"name" : "rossriley/boltcomposer-webroot",
+	"require" : {
+		"bolt/bolt" : "dev-master"
+	},
+    "require-dev" : {
+        "rixbeck/bolt-tasks" : "dev-master"
     },
-    "authors": [
-        {
-            "name": "Ross Riley",
-            "email": "riley.ross@gmail.com"
+    "repositories" : [{
+            "type" : "vcs",
+            "url" : "https://github.com/rixbeck/bolt-tasks.git"
         }
     ],
-    "minimum-stability": "dev",
-    
-    "scripts": {
-        "post-install-cmd": [
-            "Bolt\\Composer\\ScriptHandler::installAssets"
-        ],
-        "post-update-cmd": [
-            "Bolt\\Composer\\ScriptHandler::installAssets"
-        ]
-    },
-    
-    "extra":{
-        "bolt-web-dir": "./public"
-    },
-    
-    "autoload": {
-        "files": ["vendor/bolt/bolt/app/lib.php"]
-    },
-    
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.1-dev"
-        }
-    }
-    
-    
+	"authors" : [{
+			"name" : "Ross Riley",
+			"email" : "riley.ross@gmail.com"
+		}, {
+		    "name" : "Rix Beck",
+		    "email" : "rix@neologik.hu"
+		}
+	],
+	"minimum-stability" : "dev",
+	"scripts" : {
+		"post-install-cmd" : [
+			"Bolt\\Composer\\ScriptHandler::installAssets"
+		],
+		"post-update-cmd" : [
+			"Bolt\\Composer\\ScriptHandler::installAssets"
+		]
+	},
+	"extra" : {
+		"branch-alias" : {
+			"dev-master" : "2.1-dev"
+		}
+	},
+	"autoload" : {
+		"files" : [
+			"vendor/bolt/bolt/app/lib.php"
+		]
+	}
 }
