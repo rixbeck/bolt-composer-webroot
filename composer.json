@@ -22,14 +22,15 @@
 	"minimum-stability" : "dev",
 	"scripts" : {
 		"post-install-cmd" : [
-			"Bolt\\Composer\\ScriptHandler::installAssets"
+			"Bolt\\Composer\\ScriptHandler::installAssets",
+			"phing -f vendor/rixbeck/bolt-tasks/build/prepare/build.xml prepare-all"
 		],
 		"post-update-cmd" : [
 			"Bolt\\Composer\\ScriptHandler::installAssets"
 		]
 	},
 	"extra" : {
-	    "bolt-web-dir": "./web",
+		"bolt-web-dir" : "./web",
 		"branch-alias" : {
 			"dev-master" : "2.1-dev"
 		}
