@@ -23,7 +23,7 @@
 	"scripts" : {
 		"post-install-cmd" : [
 			"Bolt\\Composer\\ScriptHandler::installAssets",
-			"phing -f vendor/rixbeck/bolt-tasks/build/prepare/build.xml prepare-all"
+			"vendor/phing/phing/bin/phing -f vendor/rixbeck/bolt-tasks/build/prepare/build.xml prepare-all || { echo 'Project has not prepared for build tasks!' ; exit 1; }"
 		],
 		"post-update-cmd" : [
 			"Bolt\\Composer\\ScriptHandler::installAssets"
