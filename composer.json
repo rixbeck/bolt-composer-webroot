@@ -9,7 +9,10 @@
 	"repositories" : [{
 			"type" : "vcs",
 			"url" : "https://github.com/rixbeck/bolt-tasks.git"
-		}
+		},{
+            "type" : "vcs",
+            "url" : "https://github.com/bolt/bolt.git"
+        }
 	],
 	"authors" : [{
 			"name" : "Ross Riley",
