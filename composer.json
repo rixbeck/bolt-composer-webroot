@@ -1,18 +1,16 @@
 {
 	"name" : "rixbeck/boltcomposer-webroot",
 	"require" : {
-		"bolt/bolt" : "dev-master"
-	},
-	"require-dev" : {
+		"bolt/bolt" : "dev-master",
 		"rixbeck/bolt-tasks" : "dev-master"
 	},
 	"repositories" : [{
 			"type" : "vcs",
 			"url" : "https://github.com/rixbeck/bolt-tasks.git"
-		},{
-            "type" : "vcs",
-            "url" : "https://github.com/bolt/bolt.git"
-        }
+		}, {
+			"type" : "vcs",
+			"url" : "https://github.com/bolt/bolt.git"
+		}
 	],
 	"authors" : [{
 			"name" : "Ross Riley",
@@ -26,7 +24,8 @@
 	"scripts" : {
 		"post-install-cmd" : [
 			"Bolt\\Composer\\ScriptHandler::installAssets",
-			"vendor/phing/phing/bin/phing -f vendor/rixbeck/bolt-tasks/build/prepare/build.xml prepare-all || { echo 'Project has not prepared for build tasks!' ; exit 1; }"
+			"vendor/phing/phing/bin/phing -f vendor/rixbeck/bolt-tasks/build/prepare/build.xml prepare-all || { echo 'Project has not prepared for build tasks!' ; exit 1; }",
+			"vendor/phing/phing/bin/phing -f vendor/rixbeck/bolt-tasks/build/prepare/build.xml prepare-themes || { echo 'Project has not prepared for build tasks!' ; exit 1; }"
 		],
 		"post-update-cmd" : [
 			"Bolt\\Composer\\ScriptHandler::installAssets"
