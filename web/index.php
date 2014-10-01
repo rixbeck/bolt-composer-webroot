@@ -2,7 +2,7 @@
 require_once "../vendor/autoload.php";
 $configuration = new Bolt\Configuration\Composer(dirname(__DIR__));
 $configuration->setPath("web","web");
-$configuration->setPath("files","webc/files");
+$configuration->setPath("files","web/files");
 $configuration->setPath("themebase","web/theme");
 $configuration->getVerifier()->removeCheck('apache');
 $configuration->compat();
