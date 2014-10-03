@@ -1,6 +1,6 @@
 ##Bolt Stack
 
-Bolt stack is a branch of bolt-composer-webroot skeleton for ensuring some
+Bolt stack is a fork of bolt-composer-webroot skeleton for ensuring some
 basement of building a stackable aplication on top of Bolt.
 
 ###Install Bolt as a Web-Root Composer Package
@@ -33,7 +33,7 @@ Create a mapping in your `web/index.php` for app stacking similar like this:
 
 Add your dependant modules in `composer.json` require section
 
-```
+```json
 "require": {
  ...
     "vendorname/foo": "*",
