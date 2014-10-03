@@ -6,3 +6,5 @@ app/database/*
 thumbs/
 vendor/
 /.settings/
+/.buildpath
+/.project
