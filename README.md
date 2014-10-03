@@ -1,3 +1,8 @@
+##Bolt Stack
+
+Bolt stack is a branch of bolt-composer-webroot skeleton for ensuring some
+basement of building a stackable aplication on top of Bolt.
+
 ###Install Bolt as a Web-Root Composer Package
 
 This skeleton installs the Bolt app outside of the web root, with a public directory to handle
@@ -5,18 +10,36 @@ public assets.
 
 To install:
 
-`composer create-project rixbeck/boltcomposer-webroot mybolt-project`
+`composer create-project rixbeck/boltstack-webroot mybolt-project`
 
+Create a mapping in your `web/index.php` for app stacking similar like this:
+
+```php
+...
+  $map = array(
+  '/foo' => Stack\lazy(function () {
+     $app = new Foo\Application();
+     $app->initialize();
+     return $app;
+  }),
+  '/bar' => Stack\lazy(function () {
+     $app = new Bar\Application();
+     $app->initialize();
+     return $app;
+  })
+ );
+ ...
+```
+
+Add your dependant modules in `composer.json` require section
+
+```
+"require": {
+ ...
+    "vendorname/foo": "*",
+    "vendorname/bar": "*"
+ ...
+ ```
 
 Then navigate to `/bolt` and you should see the first user setup screen.
-
-#### Notes
-
-It is a fork of `rossriley/boltcomposer-webroot` with additional packages in composer.json like
-
-- http://github.com/rixbeck/bolt-tasks
-
-Bolt tasks contains some features that currently missing in the original.
-With those you can prepare, deploy and stage your current Bolt project.
-
 

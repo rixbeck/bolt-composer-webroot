@@ -1,5 +1,5 @@
 {
-	"name" : "rixbeck/boltcomposer-webroot",
+	"name" : "rixbeck/boltstack-webroot",
 	"require" : {
 		"bolt/bolt" : "dev-master",
 		"rixbeck/bolt-tasks" : "dev-master"
