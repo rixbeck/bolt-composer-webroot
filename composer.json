@@ -1,8 +1,8 @@
 {
-	"name" : "rixbeck/boltcomposer-webroot",
+	"name" : "rixbeck/boltstack-webroot",
 	"require" : {
 		"bolt/bolt" : "dev-master",
-		"rixbeck/bolt-tasks" : "dev-master"
+		"rixbeck/bolt-tasks" : "dev-master",
 	},
 	"repositories" : [{
 			"type" : "vcs",
@@ -28,7 +28,8 @@
 			"vendor/phing/phing/bin/phing -f vendor/rixbeck/bolt-tasks/build/prepare/build.xml prepare-themes || { echo 'Project has not prepared for build tasks!' ; exit 1; }"
 		],
 		"post-update-cmd" : [
-			"Bolt\\Composer\\ScriptHandler::installAssets"
+			"Bolt\\Composer\\ScriptHandler::installAssets",
+            "vendor/phing/phing/bin/phing -f vendor/rixbeck/bolt-tasks/build/prepare/build.xml prepare-themes -Doverwrite=true || { echo 'Project has not prepared for build tasks!' ; exit 1; }"
 		]
 	},
 	"extra" : {
