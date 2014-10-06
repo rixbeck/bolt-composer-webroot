@@ -1,46 +1,46 @@
 {
-  "name" : "rixbeck/boltstack-webroot",
-  "require" : {
-    "bolt/bolt" : "dev-master",
-    "rixbeck/bolt-tasks" : "dev-master",
-  },
-  "repositories" : [{
-      "type" : "vcs",
-      "url" : "https://github.com/rixbeck/bolt-tasks.git"
-    }, {
-      "type" : "vcs",
-      "url" : "https://github.com/bolt/bolt.git"
-    }
-  ],
-  "authors" : [{
-      "name" : "Ross Riley",
-      "email" : "riley.ross@gmail.com"
-    }, {
-      "name" : "Rix Beck",
-      "email" : "rix@neologik.hu"
-    }
-  ],
-  "minimum-stability" : "dev",
-  "scripts" : {
-    "post-install-cmd" : [
-      "Bolt\\Composer\\ScriptHandler::installAssets",
-      "vendor/phing/phing/bin/phing -f vendor/rixbeck/bolt-tasks/build/prepare/build.xml prepare-all || { echo 'Project has not prepared for build tasks!' ; exit 1; }",
-      "vendor/phing/phing/bin/phing -f vendor/rixbeck/bolt-tasks/build/prepare/build.xml prepare-themes || { echo 'Project has not prepared for build tasks!' ; exit 1; }"
-    ],
-    "post-update-cmd" : [
-      "Bolt\\Composer\\ScriptHandler::installAssets",
-      "vendor/phing/phing/bin/phing -f vendor/rixbeck/bolt-tasks/build/prepare/build.xml prepare-themes -Doverwrite=true || { echo 'Project has not prepared for build tasks!' ; exit 1; }"
-    ]
-  },
-  "extra" : {
-    "bolt-web-dir" : "./web",
-    "branch-alias" : {
-      "dev-master" : "2.1-dev"
-    }
-  },
-  "autoload" : {
-    "files" : [
-      "vendor/bolt/bolt/app/lib.php"
-    ]
-  }
+	"name" : "rixbeck/boltstack-webroot",
+	"require" : {
+		"bolt/bolt" : "dev-master",
+		"rixbeck/bolt-tasks" : "dev-master"
+	},
+	"repositories" : [{
+			"type" : "vcs",
+			"url" : "https://github.com/rixbeck/bolt-tasks.git"
+		}, {
+			"type" : "vcs",
+			"url" : "https://github.com/bolt/bolt.git"
+		}
+	],
+	"authors" : [{
+			"name" : "Ross Riley",
+			"email" : "riley.ross@gmail.com"
+		}, {
+			"name" : "Rix Beck",
+			"email" : "rix@neologik.hu"
+		}
+	],
+	"minimum-stability" : "dev",
+	"scripts" : {
+		"post-install-cmd" : [
+			"Bolt\\Composer\\ScriptHandler::installAssets",
+			"vendor/phing/phing/bin/phing -f vendor/rixbeck/bolt-tasks/build/prepare/build.xml prepare-all || { echo 'Project has not prepared for build tasks!' ; exit 1; }",
+			"vendor/phing/phing/bin/phing -f vendor/rixbeck/bolt-tasks/build/prepare/build.xml prepare-themes || { echo 'Project has not prepared for build tasks!' ; exit 1; }"
+		],
+		"post-update-cmd" : [
+			"Bolt\\Composer\\ScriptHandler::installAssets",
+			"vendor/phing/phing/bin/phing -f vendor/rixbeck/bolt-tasks/build/prepare/build.xml prepare-themes -Doverwrite=true || { echo 'Project has not prepared for build tasks!' ; exit 1; }"
+		]
+	},
+	"extra" : {
+		"bolt-web-dir" : "./web",
+		"branch-alias" : {
+			"dev-master" : "2.1-dev"
+		}
+	},
+	"autoload" : {
+		"files" : [
+			"vendor/bolt/bolt/app/lib.php"
+		]
+	}
 }
