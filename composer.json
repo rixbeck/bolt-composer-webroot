@@ -3,6 +3,11 @@
 	"require" : {
 		"bolt/bolt" : "dev-master",
 		"rixbeck/bolt-tasks" : "dev-master",
+		"stack/run" : "~1.0",
+		"stack/builder" : "~1.0",
+		"stack/url-map" : "~1.0",
+		"stack/lazy-http-kernel" : "~1.0",
+		"stack/session" : "dev-master"
 	},
 	"repositories" : [{
 			"type" : "vcs",
